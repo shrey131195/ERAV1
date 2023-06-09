@@ -1,6 +1,6 @@
 # Session 6
 
-## Part1: Neural Networks in Excel
+## Part1: Neural Networks in Excel (Backprop_era_s6.xlsx)
 
 ### Example of a Neural Network
 
@@ -94,7 +94,7 @@ sigmoid(x)  = 1/(1+exp(-x))
 
 ![image](https://github.com/shrey131195/ERAV1/assets/26046930/b6cf0f15-0cd8-495b-908e-9fe541253e29)
 
-## Part2
+## Part2 (Session_6.ipynb)
 
 The task was to create a train a CNN network that can classify MNIST data with the following constraints:
 * 99.4% validation accuracy
