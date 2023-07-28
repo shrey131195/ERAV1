@@ -88,3 +88,23 @@ def plot_loss_and_accuracy(train_losses, train_acc, test_losses, test_acc):
     axs[0, 1].set_title("Test Loss")
     axs[1, 1].plot(test_acc)
     axs[1, 1].set_title("Test Accuracy")
+# Train data transformations
+train_transforms = A.Compose([
+    A.PadIfNeeded(min_height=36, min_width=36, always_apply=True, p=1),
+    A.RandomCrop(height=32, width=32, always_apply=True, p=4),
+    A.CoarseDropout(max_holes=1, max_height=16, max_width=16, min_holes=1, min_height=8, min_width=8,always_apply=False,fill_value=(0.5, 0.5, 0.5)),
+    A.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
+    ToTensorV2()
+    ])
+
+# Test data transformations
+test_transforms = A.Compose([
+    A.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
+    ToTensorV2()
+    ])
+# from utils import get_mnist_data
+# train, test = get_mnist_data(train_transforms, test_transforms)
+def get_augmentation(transforms):
+    return lambda img: transforms(image=np.array(img))['image']
+train = datasets.CIFAR10('./data', train=True, download=True, transform=get_augmentation(train_transforms))
+test = datasets.CIFAR10('./data', train=False, download=True, transform=get_augmentation(test_transforms))
