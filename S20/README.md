@@ -12,3 +12,5 @@
 
 #### 5 Styles and Color Loss Results
 ![image](https://github.com/shrey131195/ERAV1/assets/26046930/83f1638b-9c74-4f4e-9b22-99d93e739ac8)
+![image](https://github.com/shrey131195/ERAV1/assets/26046930/599ae71e-4d9f-45c2-b567-54cb8167d2f9)
+
